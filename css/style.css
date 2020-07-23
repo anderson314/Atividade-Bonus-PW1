@@ -1,0 +1,36 @@
+body{
+    font-family:arial;
+    background-color:black;
+    font-size:14px;
+}
+
+.data{
+    width:20px;
+    margin-top:5px;
+}
+
+#ano{
+    width: 30px;
+}
+
+.btn_calcular{
+    font-family:arial;
+    width:150px;
+    height:40px;
+}
+
+.btn_limpar{
+    width:150px;
+    height:40px;
+}
+
+.container{
+    margin: 0 auto;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border: black solid 1px;
+    width:160px;
+    background-color:white;
+    box-shadow: 0px 2px 2px 3px blue;
+}

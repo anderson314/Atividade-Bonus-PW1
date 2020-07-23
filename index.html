@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício Bônus</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/script.js">
+        </script>
+    </head>
+    <body>
+        <p style="color:white; float:left;">Anderson Rodrigo da Silva - 1°Q</p>
+        <div class="container">
+            <!--Nome-->
+            <label for="nome">Nome: </label> <br>
+            <input type="text" id="nome">
+            </br>
+             <br>
+
+             <!--Salário-->
+            <label for="salario" >Salário: </label><br>
+            <input id="salario" onblur="verificar_salario(salario.value);">
+
+            <br>
+            <br>
+
+            <!--Data de admissão-->
+            <label for="dia">Data de admissão</label> <br>
+            <div class="datas">
+                <input type="text" id="dia" class="data">
+                <input type="text" id="mes" class="data">
+                <input type="text" id="ano" class="data" onblur="verificar_se_eh_data(dia.value,mes.value,ano.value);">
+            </div>
+
+            
+            <br>
+            <!--Quantidade de filhos-->
+            <label for="qtd_filhos">Qtd Filhos: </label> <br>
+            <input id="qtd_filhos">
+            <br>
+            <br>
+
+            <!--INSS-->
+            <label for="inss">INSS: </label> <br>
+            <input id="inss" readonly>
+            <br>
+            <br>
+            <!--Imposto de Renda-->
+            <label for="ir">IR: </label> <br>
+            <input id="ir" readonly>
+            <br>
+            <br>
+            <!--Bonus-->
+            <label for="bonus" class="bonusLabel">Bonus: </label> <br>
+            <input id="bonus" readonly >
+            <br>
+            <br>
+            <!--Descontos-->
+            <label for="descontos" class="afastarLabel">Descontos </label> <br>
+            <input id="descontos" readonly >
+            <br>
+            <br>
+            <!--Salario Liquido-->
+            <label for="salario_liq" class="afastarLabel">Salário liquido: </label> <br>
+            <input id="salario_liq" readonly >
+            <br>
+            <br>
+            
+            <!--Botão que irá fazer os cálculos-->
+             <button onclick="inss.value = calcular_inss(salario.value);
+                         ir.value = calcular_imposto_renda(salario.value);
+                         bonus.value = calcular_bonus(qtd_filhos.value);
+                         descontos.value = calcular_desconto(inss.value,ir.value);
+                         salario_liq.value = calcular_salario_liquido(salario.value,descontos.value,bonus.value);
+                         "
+                         class="btn_calcular"
+                         >CALCULAR</button>
+            <!--Botão que fará a limpeza de todos os campos-->
+            <button onclick="nome.value = limpar_campos(nome.value);
+                            salario.value = limpar_campos(salario.value);
+                            dia.value = limpar_campos(dia.value);
+                            mes.value = limpar_campos(mes.value);
+                            ano.value = limpar_campos(ano.value);
+                            inss.value = limpar_campos(inss.value);
+                            ir.value = limpar_campos(inss.value);
+                            bonus.value = limpar_campos(bonus.value);
+                            descontos.value = limpar_campos(descontos.value);
+                            salario_liq.value = limpar_campos(salario.value);
+                            qtd_filhos.value = limpar_campos(qtd_filhos.value);
+                            " class="btn_limpar">LIMPAR</button>
+        </div>
+
+    </body>
+</html>
